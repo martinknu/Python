@@ -6,20 +6,38 @@
 import os
 from copy import copy
 from os import walk
+import ctypes 
+import sys
 
 
-imgFolder = "/home/martink/sites/python/Python/htmlgenerators/createdivimgs/images"
+# Messagebox
+def Mbox(title, text, style):
+    return ctypes.windll.user32.MessageBoxW(0, text, title, style)
+
+
+imgFolder = "images"
 wwwFolder = "media/"
 imgType = ""
+imgWidth = "600"
+divClass = "image_gallery"
 filesList = []
 imgDict = {"name": "", "path": "","size": ""} 
 selList = []
 htmlOutput = "htmlpics.txt"
 
 
+
 # Walk folder and find all files
-for (dirpath, dirnames, filenames) in walk(imgFolder):
-    filesList.extend(filenames)
+try:
+    for (dirpath, dirnames, filenames) in walk(imgFolder):
+        filesList.extend(filenames)
+except:
+    Mbox('Error', 'Path does not yield any results, check path or no images in path', 1)   
+
+
+if not filesList:
+    sys.exit("No files found")
+
 
 # Filter files for specific type and get additional info
 for x in filesList:
@@ -37,8 +55,7 @@ for x in filesList:
 with open(htmlOutput , "w") as file:
 
     for x in selList:
-        strHTML = "<img src=\"" + wwwFolder + x["name"] + "\" alt=\"" + x["name"] + "\" width=\"500\"  style=\"display: block; margin:10px; border-radius: 15px\" >"
+        file.write("<div class=\"" + divClass + "\">\n")
+        strHTML = "<img src=\"" + wwwFolder + x["name"] + "\" alt=\"" + x["name"] + "\" width=\"" + imgWidth + "\"  style=\"display: block; margin:10px; border-radius: 15px\" >"
         file.write(f'{strHTML}\n')
-
-
-# height=\"600\"
+        file.write("</div>\n")

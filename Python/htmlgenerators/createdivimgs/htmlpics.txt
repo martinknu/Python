@@ -1,5 +1,15 @@
-<img src="media/good-faces-F0bQv2nd8q8-unsplash.jpg" alt="good-faces-F0bQv2nd8q8-unsplash.jpg" width="500"  style="display: block; margin:10px; border-radius: 15px" >
-<img src="media/20-202688_sports-png-file-download-free-play-sports-transparent.jpeg" alt="20-202688_sports-png-file-download-free-play-sports-transparent.jpeg" width="500"  style="display: block; margin:10px; border-radius: 15px" >
-<img src="media/allan-lainez-N2YmaF7FZ7E-unsplash.jpg" alt="allan-lainez-N2YmaF7FZ7E-unsplash.jpg" width="500"  style="display: block; margin:10px; border-radius: 15px" >
-<img src="media/christophe-rollando-SNs_hBVrZlw-unsplash.jpg" alt="christophe-rollando-SNs_hBVrZlw-unsplash.jpg" width="500"  style="display: block; margin:10px; border-radius: 15px" >
-<img src="media/fashion.jpg" alt="fashion.jpg" width="500"  style="display: block; margin:10px; border-radius: 15px" >
+<div class="image_gallery">
+<img src="media/allan-lainez-N2YmaF7FZ7E-unsplash.jpg" alt="allan-lainez-N2YmaF7FZ7E-unsplash.jpg" width="600"  style="display: block; margin:10px; border-radius: 15px" >
+</div>
+<div class="image_gallery">
+<img src="media/fashion.jpg" alt="fashion.jpg" width="600"  style="display: block; margin:10px; border-radius: 15px" >
+</div>
+<div class="image_gallery">
+<img src="media/20-202688_sports-png-file-download-free-play-sports-transparent.jpeg" alt="20-202688_sports-png-file-download-free-play-sports-transparent.jpeg" width="600"  style="display: block; margin:10px; border-radius: 15px" >
+</div>
+<div class="image_gallery">
+<img src="media/good-faces-F0bQv2nd8q8-unsplash.jpg" alt="good-faces-F0bQv2nd8q8-unsplash.jpg" width="600"  style="display: block; margin:10px; border-radius: 15px" >
+</div>
+<div class="image_gallery">
+<img src="media/christophe-rollando-SNs_hBVrZlw-unsplash.jpg" alt="christophe-rollando-SNs_hBVrZlw-unsplash.jpg" width="600"  style="display: block; margin:10px; border-radius: 15px" >
+</div>
