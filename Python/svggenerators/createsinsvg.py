@@ -13,20 +13,20 @@ def Mbox(title, text, style):
 
 
 
-points = 100
+points = 500
 amplitude = 5.0
 svgHeight = 100
-svgWidth = 100
+svgWidth = 1000
 svgOutput = "sinodialpic.svg"
 shape = []
 
 
 # Create shape
 i = 0
-while i < points:
+while i <= points:
     #print(i)
     #print(math.sin(i))
-    shape.append([i,  math.sin(math.radians(360)/points*i)])
+    shape.append([svgWidth/points*i,  math.sin(math.radians(360)/points*i)])
     i += 1
 
 
