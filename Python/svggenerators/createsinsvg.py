@@ -30,7 +30,8 @@ while i <= points:
 # Create svg file with coordinates
 with open(svgOutput , "w") as file:
     
-    file.write(f'<svg height=\"{svgHeight}\" width=\"{svgWidth}\">\n')
+    file.write(f'<svg height=\"{svgHeight}\" width=\"{svgWidth}\" \n')
+    file.write('xmlns=\"http://www.w3.org/2000/svg\">\n')
     file.write('<polyline points=\"')
     for x in shape:
         file.write(str(x[0]) + "," + str((svgHeight/2) + (x[1])* amplitude) + " ")
