@@ -1,0 +1,13 @@
+<svg height="100" width="100" 
+xmlns="http://www.w3.org/2000/svg">
+<path d="M 0 50 C 16 70, 33 70, 50 50, " fill="none" stroke="black" />
+<path d="M 50 50 C 66 30, 83 30, 100 50, " fill="none" stroke="black" />
+<circle cx="0" cy="50" r="2" stroke="red" />
+<circle cx="16" cy="70" r="2" stroke="orange" />
+<circle cx="33" cy="70" r="2" stroke="yellow" />
+<circle cx="50" cy="50" r="2" stroke="green" />
+<circle cx="50" cy="50" r="2" stroke="yellow" />
+<circle cx="66" cy="30" r="2" stroke="green" />
+<circle cx="83" cy="30" r="2" stroke="purple" />
+<circle cx="100" cy="50" r="2" stroke="cyan" />
+</svg>
