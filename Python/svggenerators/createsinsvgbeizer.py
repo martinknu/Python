@@ -11,7 +11,7 @@ import math
 def Mbox(title, text, style):
     return ctypes.windll.user32.MessageBoxW(0, text, title, style)
 
-bdebug = True
+bdebug = False
 amplitude = 20
 svgHeight = 100
 svgWidth = 100
@@ -42,12 +42,17 @@ with open(svgOutput , "w") as file:
             match z:
                 case 0:
                     file.write(f'<path d="M {q[0]} {q[1]} C ')
-                case _:    
-                    if i != len(x) :
+                    origin = q[0]
+                case _:
+                    print(f'z: {z} ,q: {q} , len:{len(q)}')    
+                    if z != len(q)+1 :
                         file.write(f'{q[0]} {q[1]}, ')
                     else:
+                        print("end")
                         file.write(f'{q[0]} {q[1]}')
-        file.write(f'" fill="none" stroke="black" />\n')
+                        file.write(f' L {q[0]}, {svgHeight}, {origin}, {svgHeight} ')
+        
+        file.write(f'" fill="black" stroke="none" />\n')
 
 
 #Debug points
