@@ -32,7 +32,7 @@ def free_text(
     font: str = "Times",
     bold: bool = False,
     italic: bool = False,
-    font_size: str = "30pt",
+    font_size: str = "60pt",
     font_color: str = "000000",
     border_color: str = "000000",
     background_color: str = "ffffff",
@@ -78,6 +78,7 @@ def Mbox(title, text, style):
 #Declerations
 merger = PdfMerger()
 mergerlist = []
+mergerlistlength = []
 mergerobjects = []
 metadatalist = []
 breakerpages = []
@@ -110,11 +111,14 @@ if not mergerlist:
 for pdf in mergerlist:
     reader = PdfReader(sourcefolder + "/" + pdf)
     mergerobjects.append(reader.pages)
+    mergerlistlength.append(len(reader.pages))
     meta = reader.metadata
     metadatalist.append(meta)
     #print(f'Metadata: {metadatalist[len(metadatalist)-1]}')
     #print('\n')
 print(mergerobjects)
+#print(f'Document length: {mergerlistlength}')
+
 
 #Create breaker pages
 il1 = 0
@@ -132,12 +136,33 @@ for pdffile in mergerlist:
         background_color="FFFFFF"
     )
 
+    # Add the line
+    annotation = AnnotationBuilder.link(
+        rect=(50, 150, 200, 250), target_page_index=1, fit="/FitH", fit_args=(123,)
+    )
+
+
     newpage = PageObject().create_blank_page(pdf=None, width=breakerwidth,height=breakerheight)
     writer.add_page(newpage)
     writer.add_annotation(page_number=il1, annotation=myAnnDict)
+    writer.add_annotation(page_number=il1, annotation=annotation)
+
     #writer.add_page(mergerobjects[il1])
     writer.write(output)
     il1 += 1
+
+#Create index
+writer.add_outline_item(
+    title=f'This is the outline item to insert as index',
+    page_number=0,
+    parent=None,
+    color="FFFFFF",
+    bold=False,
+    italic=False,
+    fit="/Fit"
+)
+
+
 output.close()
 
 #write merge documents
@@ -146,6 +171,9 @@ for il1 in range(0,len(mergerlist)):
     print(il1)
     merger.append(fileobj=input1, pages=(il1, il1+1))
     merger.append(sourcefolder + "/" + mergerlist[il1])
+
+
+
 
 merger.write("merged-pdfs.pdf")
 merger.close()
