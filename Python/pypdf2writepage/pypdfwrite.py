@@ -54,7 +54,7 @@ def free_text(
     if italic is True:
         font_str = font_str + "italic "
     font_str = font_str + font + " " + font_size
-    font_str = font_str + ";text-align:right;color:#" + font_color
+    font_str = font_str + ";text-align:center;color:#" + font_color
 
     bg_color_str = ""
     for st in hex_to_rgb(border_color):

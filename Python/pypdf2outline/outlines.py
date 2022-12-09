@@ -87,16 +87,15 @@ breakerpages = []
 sourcefolder = "docs"
 writer = PdfWriter()
 output = open("breakerpages.pdf", "wb")
+output2 = open("docwithoutlines.pdf", "wb")
 breakerwidth = 595
 breakerheight = 842
-#myAnnDict = DictionaryObject
+
 
 #Find PDF files in folder
 try:
     for (dirpath, dirnames, filenames) in walk(sourcefolder):
-        #print(f'Dir path: {dirpath}')
         mergerlist.extend(filenames)
-        #print(f'Filenames list: {filenames}')
 except:
     Mbox('Error', 'Path does not yield any results, check path or no images in path', 1)   
 
@@ -114,7 +113,6 @@ for pdf in mergerlist:
     mergerlistlength.append(len(reader.pages))
     mergeroutlines.extend(reader.outline)
 #print(f'Merger outlines: {mergeroutlines}')
-
 
 #Create breaker pages
 il1 = 0
@@ -139,19 +137,6 @@ for pdffile in mergerlist:
 writer.write(output)
 output.close()
 
-#write merge documents
-input1 = open("breakerpages.pdf", "rb")
-for il1 in range(0,len(mergerlist)):
-    #print(f'Write merge docs:{il1}, length: {mergerlistlength[il1]}')
-    merger.append(fileobj=input1, pages=(il1, il1+1))
-    merger.append(sourcefolder + "/" + mergerlist[il1])
-    if il1 == 0:
-        insertat = 0
-        merger.add_outline_item(f'{mergerlist[il1]}' , page_number=insertat, color="800080")
-    else:
-        insertat += 1 + int(mergerlistlength[il1-1])
-        merger.add_outline_item(f'{mergerlist[il1]}' , page_number=insertat, color="800080")
 
-merger.write("merged-pdfs.pdf")
-merger.close()
-input1.close()
+
+
