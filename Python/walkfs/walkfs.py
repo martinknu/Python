@@ -7,6 +7,7 @@ from os import walk
 import sys
 import json
 
+
 class FileFolders:
     fileList = []
     fileItem = {
@@ -16,17 +17,17 @@ class FileFolders:
     }
 
     #Find PDF files in folder
-    def walkFolder(self, folder):
+    def walkFolder(self, folder, searchTopDown, errorHandle, followLinks):
         try:
-            for (dirpath, dirnames, filenames) in walk(folder):
-                print(filenames)
-                self.fileItem['path'] = dirpath 
-                self.fileItem['name'] = filenames 
-                self.fileItem['dirname'] = dirnames
-                self.fileList.append(self.fileItem)
+            for (dirpath, dirnames, filenames) in walk(folder, topdown=searchTopDown, onerror=errorHandle, followlinks=followLinks ):
+                for fileName in filenames:
+                    self.fileItem['path'] = dirpath 
+                    self.fileItem['name'] = fileName 
+                    self.fileItem['dirname'] = dirnames
+                    self.fileList.append(self.fileItem.copy())
+                    self.fileItem.clear
         except:
             print('Error', 'Path does not yield any results, check path or no images in path')   
-
 
         #If no files in folder exit 
         if not self.fileList:
@@ -34,12 +35,3 @@ class FileFolders:
 
         return self.fileList
 
-mywalk = FileFolders()
-
-mysteryFiles= mywalk.walkFolder("folder1")
-
-print(f'mystery files: {mysteryFiles}')
-#print(f'mystery files: {mysteryFiles["name"]}')
-
-
-print(json.dumps(mysteryFiles, indent=4))
