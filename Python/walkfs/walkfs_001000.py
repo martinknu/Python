@@ -2,6 +2,7 @@
 #Created: 2022-12-25
 #Author: Martin Knudsen
 #Purpose: Get file and folder info and return object with info
+#Version: 001.000 : First version
 
 from os import walk
 import sys
