@@ -1,0 +1,4 @@
+#Gitignore Python
+__pycache__
+
+
