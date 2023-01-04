@@ -1,4 +1,4 @@
-from walkfs_001000 import FileFolders
+from walkfs import FileFolders
 import json
 
 
