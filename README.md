@@ -18,7 +18,9 @@ Python examples and templates
     Course modules from "Full stack web developer course"
 
 ## PY101_01
-    Course modules from "Full srack web developer course"
+    Course modules from "Full stack web developer course"
+
+    helloworld.py: Contains simple datatypes and datatype functions. And examples of simple loops.
 
 ## osfunc
     Examples of os functions contained in cpython

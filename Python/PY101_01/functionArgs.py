@@ -5,7 +5,7 @@
 from audioop import add
 from inspect import ArgSpec
 
-
+#Create funciton with arguments, I can provide as many arguments as i wish
 def addnumbers(*args):
     total = 0
     print(args )
