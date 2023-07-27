@@ -1,7 +1,9 @@
 import logging
 
 
-logging.basicConfig( level=logging.DEBUG, format='%(asctime)s %(message)s')
+
+
+logging.basicConfig( filename='examplelog.log', level=logging.DEBUG, format='%(asctime)s %(message)s')
 #logging.basicConfig(filename='mylogfile.log', filemode='w', level=logging.DEBUG, format='%(asctime)s %(message)s')
 #logging.Logger.setLevel(level=logging.DEBUG)
 logging.info('info level is the lowest logging level, for normal program execution events')

@@ -1,0 +1,5 @@
+2023-07-27 22:44:25,350 info level is the lowest logging level, for normal program execution events
+2023-07-27 22:44:25,350 debug same as info but with more detail
+2023-07-27 22:44:25,350 warning
+2023-07-27 22:44:25,351 error
+2023-07-27 22:44:25,351 critical
