@@ -3,7 +3,7 @@
  
 
 # Declerations
-file1 = open('myfile.txt', 'r')
+file1 = open('rdsnames.txt', 'r')
 rdsNames = { }
 
 
