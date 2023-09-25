@@ -15,8 +15,8 @@ def Mbox(title, text, style):
     return ctypes.windll.user32.MessageBoxW(0, text, title, style)
 
 
-imgFolder = "images"
-wwwFolder = "media/"
+imgFolder = "images2"
+wwwFolder = "images2/"
 imgType = ""
 imgWidth = "600"
 divClass = "image_gallery"
