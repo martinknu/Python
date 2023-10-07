@@ -1,0 +1,13 @@
+<svg height="100" width="100" 
+xmlns="http://www.w3.org/2000/svg">
+<circle cx="50.0" cy="50.0" r="30" fill="yellow" stroke="black"  />
+
+<circle cx="18" cy="72" r="14" fill="red" stroke="black"  />
+<circle cx="59" cy="70" r="15" fill="yellow" stroke="black"  />
+<circle cx="60" cy="77" r="12" fill="green" stroke="black"  />
+<circle cx="52" cy="47" r="6" fill="blue" stroke="black"  />
+<circle cx="40" cy="53" r="15" fill="cyan" stroke="black"  />
+<circle cx="74" cy="41" r="8" fill="purple" stroke="black"  />
+<circle cx="30" cy="44" r="7" fill="orange" stroke="black"  />
+"
+fill="blue" stroke="black" /></svg>
