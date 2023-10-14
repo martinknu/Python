@@ -20,6 +20,8 @@ wwwFolder = "images2/"
 imgType = ""
 imgWidth = "600"
 divClass = "image_gallery"
+imgClass = "image_class_1"
+divImageText = "image_text"
 filesList = []
 imgDict = {"name": "", "path": "","size": ""} 
 selList = []
@@ -56,6 +58,11 @@ with open(htmlOutput , "w") as file:
 
     for x in selList:
         file.write("<div class=\"" + divClass + "\">\n")
-        strHTML = "<img src=\"" + wwwFolder + x["name"] + "\" alt=\"" + x["name"] + "\" width=\"" + imgWidth + "\"  style=\"display: block; margin:10px; border-radius: 15px\" >"
+        #Write image
+        strHTML = "    <img class=\"" + imgClass + "\" src=\"" + wwwFolder + x["name"] + "\" alt=\"" + x["name"] + "\" >"
         file.write(f'{strHTML}\n')
+        # Div with text
+        file.write("    <div class=\"" + divImageText + "\">" + x["name"])
+        file.write("</div>\n")
+
         file.write("</div>\n")
