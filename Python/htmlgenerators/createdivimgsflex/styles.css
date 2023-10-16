@@ -1,47 +1,52 @@
+
+.gallery_container{
+    display: block;
+}
+
 .image_gallery{
     display: flex;
-    box-sizing: border-box;
-    border: 1px solid red;
+    flex-direction: row;
+    flex-wrap: wrap; /*nowrap*/
+    justify-content: flex-start;
+    align-items: center;
     width: 70vw;
-    height: fit-content;
-    margin: auto;
-    margin-bottom: 10px;
-    position: relative;
+    margin-bottom: 5%;
 }
 
 .image_text{
     display: inline-block;
-    border: 1px solid blue;
-    width: 45%;
-    height: 90%;
+    width: 30%;
     overflow-wrap: break-word;
-    position: absolute;
-    top: 0;
-    left: auto;
     margin:10px; 
     padding: 5px;
+    order: 2;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 
 .image_class_1{
     display: inline-block;
-    width: 75%;
+    width: 60%;
     margin:10px; 
     border-radius: 15px;
-    border: 1px solid green;
+    order: 1;
+    flex-shrink: 0;
+    flex-grow: 1;
     filter: sepia(0%)
-    drop-shadow(8px 8px 10px gray)
-    brightness(100%)
-    saturate(70%);
-
+        drop-shadow(8px 8px 10px gray)
+        brightness(100%)
+        saturate(70%);
 }
 .image_class_2{
     display: inline-block;
-    width: 600px;
+    width: 60%;
     margin:10px; 
     border-radius: 15px;
-    border: 1px solid green;
+    order: 3;
+    flex-shrink: 0;
+    flex-grow: 1;
     filter: sepia(0%)
-    drop-shadow(8px 8px 10px gray)
-    brightness(100%)
-    saturate(70%);
+        drop-shadow(8px 8px 10px gray)
+        brightness(100%)
+        saturate(70%);
 }
