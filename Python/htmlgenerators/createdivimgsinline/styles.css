@@ -1,0 +1,47 @@
+.image_gallery{
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid red;
+    width: 70vw;
+    height: fit-content;
+    margin: auto;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.image_text{
+    display: inline-block;
+    border: 1px solid blue;
+    width: 45%;
+    height: 90%;
+    overflow-wrap: break-word;
+    position: absolute;
+    top: 0;
+    left: auto;
+    margin:10px; 
+    padding: 5px;
+}
+
+.image_class_1{
+    display: inline-block;
+    width: 75%;
+    margin:10px; 
+    border-radius: 15px;
+    border: 1px solid green;
+    filter: sepia(0%)
+    drop-shadow(8px 8px 10px gray)
+    brightness(100%)
+    saturate(70%);
+
+}
+.image_class_2{
+    display: inline-block;
+    width: 600px;
+    margin:10px; 
+    border-radius: 15px;
+    border: 1px solid green;
+    filter: sepia(0%)
+    drop-shadow(8px 8px 10px gray)
+    brightness(100%)
+    saturate(70%);
+}
