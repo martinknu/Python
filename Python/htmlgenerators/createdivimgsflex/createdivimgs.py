@@ -10,6 +10,30 @@ import ctypes
 import sys
 
 
+# Creatediv
+def creatediv(htmlfile, **kwargs):
+
+    strdiv = "<div> "
+
+    if "id" in kwargs:
+        print("id is:", kwargs.get("id"))
+        strdiv = strdiv + "id=\"" + kwargs.get("id") + "\""
+    if "class" in kwargs:
+        print("class is:", kwargs.get("class"))
+        strdiv = strdiv + "class=\"" + kwargs.get("class") + "\""           
+
+    file.write("<div class=\"" + divClass + "\">\n")
+    #Write image
+    strHTML = "    <img class=\"" + imgClass + "\" src=\"" + wwwFolder + x["name"] + "\" alt=\"" + x["name"] + "\" >"
+    file.write(f'{strHTML}\n')
+    # Div with text
+    file.write("    <div class=\"" + divImageText + "\">" + x["name"])
+    file.write("</div>\n")
+
+    file.write("</div>\n")
+    strdiv = strdiv + "</div>"
+    with open(htmlfile , "w") as file:
+
 # Messagebox
 def Mbox(title, text, style):
     return ctypes.windll.user32.MessageBoxW(0, text, title, style)
