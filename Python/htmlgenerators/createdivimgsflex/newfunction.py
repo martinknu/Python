@@ -25,7 +25,7 @@ def creatediv(htmlfile, **kwargs):
     strdiv = strdiv + " </div>"
     print(strdiv)
 
-    with open(htmlfile , "w") as file:
-        file.write("</div>\n")
+    with open(htmlfile , "a") as file:
+        file.write(strdiv + "\n")
 
-creatediv("myfile", divId="some_id", divClass="some_class", divImage={"imgclass": "someclass", "imgsrc": "imagesource", "imgalt": "alt text"})
+creatediv("myfile", divId="some_id", divClass="some_class", divImage={"imgclass": "someclass", "imgsrc": "images2/ash-edmonds-oQ7Y1cU-Rlg-unsplash.jpg", "imgalt": "alt text"})

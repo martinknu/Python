@@ -50,3 +50,17 @@
         brightness(100%)
         saturate(70%);
 }
+
+.someclass{
+    display: inline-block;
+    width: 60%;
+    margin:10px; 
+    border-radius: 15px;
+    order: 1;
+    flex-shrink: 0;
+    flex-grow: 1;
+    filter: sepia(0%)
+        drop-shadow(8px 8px 10px gray)
+        brightness(100%)
+        saturate(70%);
+}
