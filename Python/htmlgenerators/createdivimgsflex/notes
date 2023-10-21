@@ -1,0 +1,12 @@
+    if "embedDiv" in kwargs:
+        for embeddedDiv in kwargs.get("embedDiv"):
+            strdiv = strdiv + "<div>"
+            if "divid" in embeddedDiv:
+                strdiv = strdiv + " id=\""  + embeddedDiv["divid"] + "\""  
+            if "divclass" in embeddedDiv:
+                strdiv = strdiv + " class=\""  + embeddedDiv["divclass"] + "\""  
+            if "divtext" in embeddedDiv:
+                strdiv = strdiv + " src=\""  + embeddedDiv["imgsrc"] + "\""  
+            if "imgalt" in embeddedDiv:
+                strdiv = strdiv + " alt=\""  + embeddedDiv["imgalt"] + "\""  
+            strdiv = strdiv + "</div>"
