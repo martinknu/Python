@@ -1,5 +1,11 @@
 # Creatediv
 def creatediv(htmlfile, **kwargs):
+    '''
+    Created HTML code with a div and embedded image or div
+    htmlfile: file to output HTML code, kwargs must come in format 
+    divId, divClass, divImage{imgclass, imgsrc, imgalt}
+    '''
+
 
     strdiv = "<div "
 
