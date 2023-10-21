@@ -1,9 +1,16 @@
-# Creatediv
-def creatediv(htmlfile, **kwargs):
+def creatediv(**kwargs):
     '''
-    Created HTML code with a div and embedded image or div
-    htmlfile: file to output HTML code, kwargs must come in format 
-    divId, divClass, divImage{imgclass, imgsrc, imgalt}
+    Created HTML code with a div and embedded image or divs.
+
+    Args:
+        htmlfile (string): file to output HTML code. 
+    
+    kwargs: 
+        divId, divClass, divText
+        divImage{imgClass, imgSrc, imgAlt}.
+    
+    return:
+        strdiv (string)
     '''
 
 
@@ -17,21 +24,30 @@ def creatediv(htmlfile, **kwargs):
 
     strdiv = strdiv + "\"> "
 
-    if "divImage" in kwargs:
-        divImage = kwargs.get("divImage")
-        strdiv = strdiv + "<img"
-        if "imgclass" in divImage:
-            strdiv = strdiv + " class=\""  + divImage["imgclass"] + "\""  
-        if "imgsrc" in divImage:
-            strdiv = strdiv + " src=\""  + divImage["imgsrc"] + "\""  
-        if "imgalt" in divImage:
-            strdiv = strdiv + " alt=\""  + divImage["imgalt"] + "\""  
-        strdiv = strdiv + ">"
+    if "divText" in kwargs:
+        strdiv = strdiv + kwargs.get("divText")
+
+    if "embedImage" in kwargs:
+        for divImage in kwargs.get("embedImage"):
+            strdiv = strdiv + "<img"
+            if "imgClass" in divImage:
+                strdiv = strdiv + " class=\""  + divImage["imgClass"] + "\""  
+            if "imgSrc" in divImage:
+                strdiv = strdiv + " src=\""  + divImage["imgSrc"] + "\""  
+            if "imgAlt" in divImage:
+                strdiv = strdiv + " alt=\""  + divImage["imgAlt"] + "\""  
+            strdiv = strdiv + ">"
+
+    if "embedDiv" in kwargs:
+        for embeddedDiv in kwargs.get("embedDiv"):
+            print(embeddedDiv)
+            strdiv = strdiv + creatediv(**embeddedDiv)
 
     strdiv = strdiv + " </div>"
     print(strdiv)
 
-    with open(htmlfile , "a") as file:
-        file.write(strdiv + "\n")
+    #with open(htmlfile , "a") as file:
+    #    file.write(strdiv + "\n")
 
-creatediv("myfile", divId="some_id", divClass="some_class", divImage={"imgclass": "someclass", "imgsrc": "images2/ash-edmonds-oQ7Y1cU-Rlg-unsplash.jpg", "imgalt": "alt text"})
+    return strdiv
+creatediv(divId="some_id", divClass="some_class", divText="my text to insert", embedImage=[{"imgClass": "someimageclass", "imgSrc": "images2/ash-edmonds-oQ7Y1cU-Rlg-unsplash.jpg", "imgAlt": "alt text"},{"imgClass": "someimageclass", "imgSrc": "images2/ash-edmonds-oQ7Y1cU-Rlg-unsplash.jpg", "imgAlt": "alt text"}], embedDiv=[{"divId": "embeddeddivid1", "divClass": "embeddeddivclass1"},{"divId": "embeddeddivid2", "divClass": "embeddeddivclass2"}])
