@@ -92,3 +92,7 @@ Python examples and templates
     
 ## walkfs
     Create list with files and folders in searched folder
+
+## pydbselect	
+	Example of mssql_python library
+
